@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float celsius; //temperatura in celsius
+    float fahreneit; //temperatura in fahreneit
+    float kelvin; //temperatura in kelvin
+    printf("%s", "Inserire la temperatura in celsius:");
+    scanf("%f", &celsius);
+    if(celsius<-273.15) { //se la temperatura è minore di zero assoluto
+            puts("Errore");
+    }
+    else {
+            float fahreneit = (9/5)*celsius + 32; //conversione in fahreneit
+
+    printf("fahreneit temperature is %.2f\n", fahreneit);
+    float kelvin = celsius + 273.15;
+    printf("kelvin temperature is %.2f\n", kelvin);
+
+    }
+
+
+}
