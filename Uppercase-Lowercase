@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char character;
+    while(1) {
+    printf("Enter character(q to quit):\n");
+    scanf(" %c", &character);
+
+    if(character == 'q') {
+            break;
+    }
+    if(character >= 'A' && character <= 'Z') {
+            puts("Uppercase character");
+    } else {
+        if(character >= 'a' && character <= 'z') {
+                puts("Lowercase character");
+        } else {
+            puts("You didn't enter a character");
+        }
+        }
+        }
+        return 0;
+    }
