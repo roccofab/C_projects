@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+{
+   char c;
+   printf("Enter character: ");
+   scanf("%c", &c);
+   int char_precedent = c - 1;
+   printf("The precedent character is %c", char_precedent);
+}
