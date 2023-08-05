@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double power(double a, double b) {
+    return pow(a, b);
+}
+
+int main()
+{
+    double a;
+    double b;
+    char operator;
+    while(1) {
+    printf("Enter:\n ");
+    scanf("%lf", &a);
+    printf("Enter:\n ");
+    scanf("%lf", &b);
+
+    getchar();
+
+    printf("Operator: ");
+    scanf(" %c", &operator);
+    double result;
+
+    switch(operator) {
+    case '+':
+        result = a + b;
+        printf("%lf\n", result);
+        break;
+
+
+    case '-':
+        result = a - b;
+        printf("%lf\n", result);
+        break;
+
+
+    case '*':
+        result = a * b;
+        printf("%lf\n", result);
+        break;
+
+
+    case '/':
+        result = a/b;
+        printf("%lf\n", result);
+        break;
+
+    case '^':
+        result = power(a, b);
+        printf("%lf\n", result);
+        break;
+
+
+
+    default:
+        printf("Invalid operator");
+        break;
+
+
+
+    }
+    }
+    return 0;
+
+
+
+
+   }
