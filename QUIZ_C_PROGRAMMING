@@ -1,0 +1,186 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+   char questions[15][6][200] = {
+       {
+           "What is the alternative to Microsoft Office?" ,
+           "a)LibreOffice",
+           "b)Autocad",
+           "c)Adobe Reader",
+           "d)Microsoft Visual Studio Code",
+           "a"  //correct
+       },
+
+       {
+           "What does the file system do?",
+           "a)Secondary memory management",
+           "b)System's programs organization",
+           "c)Primary memory management",
+           "d)Peripherals management",
+           "a" //correct
+       },
+
+       {
+           "What's the oldest and slowest version?",
+           "a)Windows 2000",
+           "b)Windows XP",
+           "3)Vista",
+           "4)Windows 10",
+           "a" //correct
+       },
+
+       {
+           "Where is the processor assembled?",
+           "a)RAM",
+           "b)Motherboard",
+           "c)Hard-disk",
+           "d)ROM",
+           "b" //correct
+       },
+
+       {
+           "How many cycles to second in 1 Hertz(Hz)?",
+           "a)One million",
+           "b)One cycle",
+           "c)One billion",
+           "d)Ten cycles",
+           "b" //correct
+       },
+
+       {
+           "What is GCC?",
+           "a)Text editors",
+           "b)IDE",
+           "c)Compiler",
+           "d)Programming language",
+           "c" //correct
+       },
+
+       {
+           "A file c is well saved:",
+           "a).txt",
+           "b).doc",
+           "c).c",
+           "d).xls",
+           "c" //correct
+       },
+
+       {
+           "Single selection is represented by:",
+           "a)if",
+           "b)if...else",
+           "c)switch",
+           "d)while",
+           "a" //correct
+       },
+
+       {
+           "for(unsigned int c = 1; c<=10; ++c) è?",
+           "a)Correct",
+           "b)wrong because ';'and not ','",
+           "c)wrong because ++c and not c++",
+           "d)wrong because c = 1 and not c == 1",
+           "a" //correct
+       },
+
+       {
+           "What is the specificator for unsigned int?",
+           "a)%d",
+           "b)%c",
+           "c)%u",
+           "d)%ld",
+           "c" //correct
+       },
+
+       {
+           "What does void do in a function?",
+           "a)The function return the string void",
+           "b)The function doesn't need input",
+           "c)The function doesn't return anything",
+           "d)The function return zero or not zero",
+           "c" //correct
+       },
+
+       {
+           "Main return:",
+           "a)zero without return",
+           "b)error without return",
+           "c)1 without return",
+           "d)not zero",
+           "a" //correct
+       },
+
+       {
+           "&array,  means:",
+           "a)array[1]",
+           "b)array(1)",
+           "c)array(0)",
+           "d)array[0]",
+           "d" //correct
+       },
+
+       {
+           "How can i declarate a pointer to integer xPtr:",
+           "a)int & xPtr;",
+           "b)int * xPtr;",
+           "c)int xPtr;",
+           "d)punt xPtr;",
+           "b" //correct
+       },
+
+       {
+           "What we use to get large integers?",
+           "a)short int",
+           "b)signed int",
+           "c)unsigned long long int",
+           "d)unsigned char",
+           "c" //correct
+       }
+       };
+       while(1) {
+
+       int num_questions = 15;
+       int replyed_questions[15] = {0};
+    srand(time(NULL));
+    int i;
+    for ( i = 0; i < num_questions; i++)
+    {
+        int casual_question;
+        do
+        {
+            casual_question = rand() % num_questions;
+        } while (replyed_questions[casual_question]);  // Ensure we don't repeat questions
+
+        replyed_questions[casual_question] = 1; // Mark the question as answered
+
+        printf("Question %d: %s\n", i + 1, questions[casual_question][0]);
+        int j;
+        for ( j = 1; j <= 4; j++)
+        {
+            printf("%s\n", questions[casual_question][j]);
+        }
+
+        char reply;
+        printf("Reply: ");
+        scanf(" %c", &reply);
+
+        char correct_reply = questions[casual_question][5][0];
+        if (reply == correct_reply)
+        {
+            printf("Right\n");
+        }
+        else
+        {
+            printf("Wrong\n");
+        }
+    }
+
+    return 0;
+       }
+}
+
