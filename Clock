@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    char risposta;
+    time_t t;
+    struct tm* ora_corrente;
+
+    printf("Vuoi sapere l'ora attuale? (si o no): ");
+    scanf(" %c", &risposta);
+
+    if (risposta == 's' || risposta == 'S' || risposta == 'y' || risposta == 'Y') {
+        // Ottieni l'ora corrente
+        t = time(NULL);
+        ora_corrente = localtime(&t);
+
+        // Stampa l'ora attuale
+        printf("L'ora attuale è: %02d:%02d:%02d\n", ora_corrente->tm_hour, ora_corrente->tm_min, ora_corrente->tm_sec);
+    } else if (risposta == 'n' || risposta == 'N') {
+        printf("OK.\n");
+    } else {
+        printf("Risposta non valida.\n");
+    }
+
+    return 0;
+}
